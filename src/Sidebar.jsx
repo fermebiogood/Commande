@@ -29,12 +29,14 @@ export default function Sidebar({ company, page, setPage, onLogout }) {
         🚛 Livraison
       </button>
 
-      <button
-        className={page === "archive" ? "active" : ""}
-        onClick={() => setPage("archive")}
-      >
-        📦 Archive
-      </button>
+      {company.name === "Ferme Biogood" && (
+  <button
+    className={page === "archive" ? "active" : ""}
+    onClick={() => setPage("archive")}
+  >
+    📦 Archive
+  </button>
+)}
 
       <button className="logout" onClick={onLogout}>
         🚪 Déconnexion

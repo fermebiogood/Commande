@@ -150,7 +150,7 @@ const removeItemFromOrder = async (order, index) => {
     const now = new Date();
 
     const newOrder = {
-      from: company.name,
+      from: company.name.trim(),
       to: "Ferme Biogood",
       items: cart,
       total: cart.reduce((sum, i) => sum + i.total, 0),
@@ -189,14 +189,14 @@ const removeItemFromOrder = async (order, index) => {
     setEditOrder(null);
   };
 
+const isBiogood = company.name === "Ferme Biogood";
+
 const visibleOrders = orders
   .filter((o) => {
-    // autres entreprises
-    if (company.name !== "Ferme Biogood") {
-      return o.from === company.name;
+    if (!isBiogood) {
+      return o.from?.trim() === company.name.trim();
     }
 
-    // admin Ferme Biogood
     if (page === "archive") {
       return o.status === "Livré";
     }
@@ -204,17 +204,15 @@ const visibleOrders = orders
     return o.status !== "Livré";
   })
   .filter((o) => {
-    if (company.name !== "Ferme Biogood") return true;
+    if (!isBiogood) return true;
 
-    if (filterCompany === "all") return true;
-
-    return o.from === filterCompany;
+    return filterCompany === "all" || o.from === filterCompany;
   })
   .sort((a, b) =>
-  sortByDate === "asc"
-    ? a.createdAt - b.createdAt
-    : b.createdAt - a.createdAt
-);
+    sortByDate === "asc"
+      ? a.createdAt - b.createdAt
+      : b.createdAt - a.createdAt
+  );
 
   const renderPage = () => {
     if (page === "home") return <Home company={company} />;
