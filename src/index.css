@@ -1,0 +1,345 @@
+/* =========================
+   BASE GTA RP CLEAN
+========================= */
+
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  color: white;
+
+  background-image: url("./assets/Ferme_Biogood.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* overlay sombre premium */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+  z-index: -1;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 380px;
+  padding: 40px;
+
+  background: rgba(15, 25, 18, 0.92);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.login-card h1 {
+  color: #4CAF50;
+  font-size: 28px;
+}
+
+/* =========================
+   INPUTS CLEAN 
+========================= */
+
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  background: rgba(0,0,0,0.35);
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.12);
+  outline: none;
+
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76,175,80,0.3);
+}
+
+/* input number clean */
+input[type="number"] {
+  text-align: center;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #2e7d32, #43a047);
+  color: white;
+
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* bouton danger */
+button[style*="red"] {
+  background: #c62828 !important;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 30px;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+
+  background: rgba(10, 20, 12, 0.92);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-title {
+  text-align: center;
+  color: #4CAF50;
+}
+
+.sidebar-company {
+  text-align: center;
+  padding: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+/* logout */
+.sidebar .logout {
+  margin-top: auto;
+  background: #c62828 !important;
+}
+
+.sidebar .logout:hover {
+  background: #e53935 !important;
+}
+
+/* =========================
+   ORDERS / CARDS
+========================= */
+
+.order-card {
+  background: rgba(20, 30, 20, 0.65);
+  border: 1px solid rgba(76, 175, 80, 0.15);
+
+  border-radius: 16px;
+  padding: 15px;
+  margin: 12px 0;
+
+  backdrop-filter: blur(10px);
+  transition: 0.2s;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(76, 175, 80, 0.4);
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   COMMANDE PANEL
+========================= */
+
+.commander-box {
+  background: rgba(20, 30, 20, 0.75);
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 420px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* layout panier */
+.commander-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px;
+  margin: 8px 0;
+
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* total */
+.total {
+  font-weight: bold;
+  color: #4CAF50;
+  margin-top: 10px;
+}
+
+/* =========================
+   HOME
+========================= */
+
+.home-box {
+  text-align: center;
+  padding: 30px;
+}
+
+.main-title {
+  color: #4CAF50;
+  font-size: 32px;
+}
+
+.welcome-title {
+  font-size: 22px;
+  opacity: 0.9;
+}
+.edit-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-box {
+  background: rgba(20,30,20,0.95);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.btn-delete {
+  background: #c62828 !important;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #e53935 !important;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.comment-box {
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  resize: none;
+}
+.comment-box,
+input[type="date"],
+input[type="time"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+.rules-box {
+  margin: 30px auto 0;
+  max-width: 950px;
+
+  background: rgba(10, 20, 12, 0.92); /* Mets ici la couleur de ta sidebar */
+  border: 2px solid #4CAF50;
+  border-radius: 15px;
+
+  padding: 30px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+.rules-box h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rules-box p {
+  text-align: center;
+}
