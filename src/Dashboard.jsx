@@ -155,7 +155,7 @@ const removeItemFromOrder = async (order, index) => {
       items: cart,
       total: cart.reduce((sum, i) => sum + i.total, 0),
       status: "En attente",
-      createdAt: now.toISOString(),
+      createdAt: Date.now(),
       dateDisplay: now.toLocaleDateString(),
       timeDisplay: now.toLocaleTimeString(),
 
@@ -210,12 +210,11 @@ const visibleOrders = orders
 
     return o.from === filterCompany;
   })
-  .sort((a, b) => {
-    const dateA = new Date(a.createdAt);
-    const dateB = new Date(b.createdAt);
-
-    return sortByDate === "asc" ? dateA - dateB : dateB - dateA;
-  });
+  .sort((a, b) =>
+  sortByDate === "asc"
+    ? a.createdAt - b.createdAt
+    : b.createdAt - a.createdAt
+);
 
   const renderPage = () => {
     if (page === "home") return <Home company={company} />;
