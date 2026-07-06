@@ -21,49 +21,76 @@ export default function Login({ onLogin }) {
   return (
     <div className="login-page">
 
-      <div className="login-card">
+      <div className="login-wrapper">
 
-        <div className="login-header">
+        {/* Carte contacts */}
+        <div className="contacts-card">
 
-<div
-  className="logo"
-  style={{ backgroundImage: `url(${logo})` }}
-></div>
+          <h2>📞 Équipe Biogood</h2>
 
-<img
-  src={logo}
-  alt="Logo Ferme BioGood"
-  style={{
-    width: "200px",
-    marginBottom: "15px"
-  }}
-/>
+          <div className="contact">
+            <h3>👑 Patronne Anna Jiménez</h3>
+            <p>📱 962-9384</p>
+          </div>
 
-  <h1>🌿 Bienvenue 🌿</h1>
+          <div className="contact">
+            <h3>👑 Co-patronne Gabii Jiménez</h3>
+            <p>📱 333-0303</p>
+          </div>
 
-</div>
+          <div className="contact">
+            <h3>📋 DRH Kendrick Stone</h3>
+            <p>📱 </p>
+          </div>
 
-        <label>Identifiant</label>
+          <div className="contact">
+            <h3>💼 Commercial</h3>
+            <p>📱 </p>
+          </div>
 
-<input
-  type="text"
-  value={username}
-  onChange={(e) => setUsername(e.target.value)}
-  placeholder="Entrez votre identifiant"
-/>
+        </div>
 
-<label>Mot de passe</label>
+        {/* Formulaire */}
+        <div className="login-card">
 
-<input
-  type="password"
-  value={password}
-  onChange={(e) => setPassword(e.target.value)}
-  placeholder="Entrez votre mot de passe"
-/>
+          <div className="login-header">
 
-        <button onClick={handleLogin}>
-          Connexion
-        </button>
+            <img
+              src={logo}
+              alt="Logo Ferme BioGood"
+              style={{
+                width: "200px",
+                marginBottom: "15px",
+              }}
+            />
+
+            <h1>🌿 Bienvenue 🌿</h1>
+
+          </div>
+
+          <label>Identifiant</label>
+
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Entrez votre identifiant"
+          />
+
+          <label>Mot de passe</label>
+
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Entrez votre mot de passe"
+          />
+
+          <button onClick={handleLogin}>
+            Connexion
+          </button>
+
+        </div>
 
       </div>
 
