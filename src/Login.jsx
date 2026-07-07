@@ -20,13 +20,12 @@ export default function Login({ onLogin }) {
 
   return (
     <div className="login-page">
-
       <div className="login-wrapper">
 
-        {/* Carte contacts */}
+        {/* Carte contacts gauche */}
         <div className="contacts-card">
 
-          <h2>📞 Équipe Biogood</h2>
+          <h2>Direction</h2>
 
           <div className="contact">
             <h3>👑 Patronne Anna Jiménez</h3>
@@ -40,12 +39,12 @@ export default function Login({ onLogin }) {
 
           <div className="contact">
             <h3>📋 DRH Kendrick Stone</h3>
-            <p>📱 </p>
+            <p>📱 075-9973</p>
           </div>
 
           <div className="contact">
-            <h3>💼 Commercial</h3>
-            <p>📱 </p>
+            <h3>📋 Manageur Mason Walker</h3>
+            <p>📱 368-7626</p>
           </div>
 
         </div>
@@ -92,8 +91,34 @@ export default function Login({ onLogin }) {
 
         </div>
 
-      </div>
+        {/* Carte contacts droite */}
+        <div className="contacts-card">
 
+          <h2>Commerciaux</h2>
+
+          <div className="contact">
+            <h3>🚛 Commercial</h3>
+            <p>📱 xxx-xxxx</p>
+          </div>
+
+          <div className="contact">
+            <h3>🚛 Commercial</h3>
+            <p>📱 xxx-xxxx</p>
+          </div>
+
+          <div className="contact">
+            <h3>🚛 Commercial</h3>
+            <p>📱 xxx-xxxx</p>
+          </div>
+
+          <div className="contact">
+            <h3>🚛 Commercial</h3>
+            <p>📱 xxx-xxxx</p>
+          </div>
+
+        </div>
+
+      </div>
     </div>
   );
 }

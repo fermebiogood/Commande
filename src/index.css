@@ -352,9 +352,15 @@ input[type="time"] {
 }
 
 .login-wrapper {
-  position: relative;
-  width: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; /* même espace partout */
 }
+
+/* =========================
+   LOGIN
+========================= */
 
 .login-card {
   width: 380px;
@@ -373,12 +379,11 @@ input[type="time"] {
   text-align: center;
 }
 
-.contacts-card {
-  position: absolute;
-  top: 50%;
-  right: calc(100% + 50px);
-  transform: translateY(-50%);
+/* =========================
+   CARTES CONTACTS
+========================= */
 
+.contacts-card {
   width: 310px;
   padding: 25px;
 
@@ -388,6 +393,9 @@ input[type="time"] {
 
   backdrop-filter: blur(15px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .contacts-card h2 {
