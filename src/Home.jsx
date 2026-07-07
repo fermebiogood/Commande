@@ -38,11 +38,7 @@ export default function Home({ company }) {
           }}
         >
           <li>
-            Toute commande est considérée comme <strong>validée</strong> dès sa confirmation.
-          </li>
-
-          <li>
-            Vérifiez attentivement les produits et les quantités avant de valider votre panier.
+            Toute commande est définitive après <strong>validation</strong>. Merci de vérifier les produits et les quantités avant de confirmer.
           </li>
 
           <li>
@@ -50,37 +46,27 @@ export default function Home({ company }) {
           </li>
 
           <li>
-            Le champ <strong>Commentaire</strong> est réservé aux informations importantes concernant votre commande, par exemple :
-            <ul>
-              <li>Numéro de téléphone ;</li>
-              <li>Contraintes de livraison ;</li>
-              <li>Commande urgente (moins de 24 heures) ;</li>
-              <li>Toute autre information utile.</li>
-            </ul>
+            Le champ <strong>Commentaire</strong> est réservé aux informations importantes (numéro de téléphone, consignes de livraison, commande urgente, etc.).
           </li>
 
           <li>
-            Veuillez renseigner une date et une heure de livraison lors de votre commande.
+            Merci de renseigner une date et une heure de livraison lors de votre commande.
           </li>
 
           <li>
-            Les commandes urgentes ne sont <strong>pas prioritaires</strong> si elles n'ont pas été signalées au préalable par téléphone à un membre de la Ferme BioGood.
+            Les commandes urgentes doivent être signalées par téléphone à un membre de la Ferme BioGood.
           </li>
 
           <li>
-            Toute tentative d'abus, de fausse commande ou de spam pourra entraîner un refus de commande et des sanctions.
+            Toute tentative d'abus, de fausse commande ou de spam pourra entraîner un refus de commande .
           </li>
 
           <li>
-            Merci de faire preuve de respect envers l'ensemble des employés de la Ferme BioGood.
+            Merci de respecter l'ensemble des collaborateurs de la Ferme BioGood.
           </li>
 
           <li>
-            En cas de question ou de problème concernant une commande, contactez directement un commercial ou un membre de la direction de la Ferme BioGood.
-          </li>
-
-          <li>
-            En validant une commande, vous reconnaissez avoir pris connaissance de ce règlement et vous vous engagez à le respecter.
+            En validant votre commande, vous reconnaissez avoir lu et accepté ce règlement.
           </li>
         </ol>
 
