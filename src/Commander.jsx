@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function Commander({
   items,
   itemId,
@@ -6,7 +8,13 @@ export default function Commander({
   setQuantity,
   addOrder,
 }) {
+  const [search, setSearch] = useState("");
+
   const selectedItem = items.find((i) => i.id === Number(itemId));
+
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="commander-box">
@@ -14,6 +22,17 @@ export default function Commander({
       <h2 className="commander-title">
         🧾 Passer une commande
       </h2>
+
+      {/* RECHERCHE */}
+      <label>🔍 Rechercher un produit :</label>
+
+      <input
+        type="text"
+        placeholder="Ex : pomme, huile..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-input"
+      />
 
       {/* PRODUIT */}
       <label>Produit :</label>
@@ -24,7 +43,7 @@ export default function Commander({
         className="select-box"
       >
         {Object.entries(
-          items.reduce((groups, item) => {
+          filteredItems.reduce((groups, item) => {
             if (!groups[item.category]) {
               groups[item.category] = [];
             }
@@ -43,7 +62,6 @@ export default function Commander({
           </optgroup>
         ))}
       </select>
-
 
       {/* QUANTITÉ */}
       <label>Quantité :</label>
@@ -69,7 +87,6 @@ export default function Commander({
         className="quantity-input"
       />
 
-
       {/* TOTAL */}
       <p
         style={{
@@ -80,7 +97,6 @@ export default function Commander({
       >
         Total : {selectedItem ? selectedItem.price * (quantity || 0) : 0}$
       </p>
-
 
       {/* BOUTON */}
       <button
