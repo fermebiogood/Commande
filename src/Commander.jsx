@@ -17,20 +17,37 @@ export default function Commander({
 
       {/* PRODUIT */}
       <label>Produit :</label>
+
       <select
         value={itemId}
         onChange={(e) => setItemId(Number(e.target.value))}
         className="select-box"
       >
-        {items.map((item) => (
-          <option key={item.id} value={item.id}>
-            {item.name} - {item.price}$
-          </option>
+        {Object.entries(
+          items.reduce((groups, item) => {
+            if (!groups[item.category]) {
+              groups[item.category] = [];
+            }
+
+            groups[item.category].push(item);
+
+            return groups;
+          }, {})
+        ).map(([category, products]) => (
+          <optgroup key={category} label={category}>
+            {products.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name} - {item.price}$
+              </option>
+            ))}
+          </optgroup>
         ))}
       </select>
 
+
       {/* QUANTITÉ */}
       <label>Quantité :</label>
+
       <input
         type="number"
         min="1"
@@ -38,7 +55,6 @@ export default function Commander({
         onChange={(e) => {
           const val = e.target.value;
 
-          // autorise écriture temporaire (meilleure UX)
           if (val === "") {
             setQuantity("");
             return;
@@ -53,20 +69,25 @@ export default function Commander({
         className="quantity-input"
       />
 
+
       {/* TOTAL */}
-      <p style={{
-        marginTop: "10px",
-        color: "#4CAF50",
-        fontWeight: "bold"
-      }}>
+      <p
+        style={{
+          marginTop: "10px",
+          color: "#4CAF50",
+          fontWeight: "bold",
+        }}
+      >
         Total : {selectedItem ? selectedItem.price * (quantity || 0) : 0}$
       </p>
+
 
       {/* BOUTON */}
       <button
         className="add-btn"
         onClick={() => {
           if (!selectedItem || !quantity || quantity < 1) return;
+
           addOrder();
         }}
       >
